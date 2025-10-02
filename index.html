@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini Canva Editor</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="frame">
+    <!-- Swiper container -->
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="https://picsum.photos/600/400?1"></div>
+        <div class="swiper-slide"><img src="https://picsum.photos/600/400?2"></div>
+        <div class="swiper-slide"><img src="https://picsum.photos/600/400?3"></div>
+      </div>
+      <!-- arrows -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+
+    <!-- Example text -->
+    <div class="text-box" contenteditable="true">Edit me</div>
+  </div>
+
+  <!-- Controls -->
+  <div class="controls">
+  <button onclick="addText()">Add Text</button>
+  <button onclick="increaseFont()">A+</button>
+  <button onclick="decreaseFont()">A-</button>
+
+  <!-- Font selector -->
+  <select id="fontSelector" onchange="changeFont(this.value)">
+    <option value="Arial">Arial</option>
+    <option value="Times New Roman">Times New Roman</option>
+    <option value="Courier New">Courier New</option>
+    <option value="Georgia">Georgia</option>
+    <option value="Cursive">Cursive</option>
+    <option value="Monospace">Monospace</option>
+  </select>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
