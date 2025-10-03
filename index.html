@@ -1,45 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Mini Canva Editor</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8">
+<title>Mini Canva Editor</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Controls outside the frame -->
-  <div class="controls">
-    <button onclick="addText()">Add Text</button>
-    <button onclick="increaseFont()">A+</button>
-    <button onclick="decreaseFont()">A-</button>
+<h1>Mini Canva Editor</h1>
 
-    <select id="fontSelector" onchange="changeFont(this.value)">
-      <option value="Arial">Arial</option>
-      <option value="Times New Roman">Times New Roman</option>
-      <option value="Courier New">Courier New</option>
-      <option value="Georgia">Georgia</option>
-      <option value="Cursive">Cursive</option>
-      <option value="Monospace">Monospace</option>
-    </select>
+<!-- Controls -->
+<div class="controls">
+  <button onclick="addText()">Add Text</button>
+  <button onclick="increaseFont()">A+</button>
+  <button onclick="decreaseFont()">A-</button>
+  <select id="fontSelector" onchange="changeFont(this.value)">
+    <option value="Arial">Arial</option>
+    <option value="Times New Roman">Times New Roman</option>
+    <option value="Courier New">Courier New</option>
+    <option value="Georgia">Georgia</option>
+    <option value="Cursive">Cursive</option>
+    <option value="Monospace">Monospace</option>
+  </select>
+  <input type="color" id="colorPicker" onchange="changeColor(this.value)">
+</div>
 
-    <input type="color" id="colorPicker" onchange="changeColor(this.value)" title="Text Color">
-  </div>
-
-  <!-- Frame for images -->
-  <div class="frame">
-    <div class="swiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="https://picsum.photos/600/400?1" alt="Image 1"></div>
-        <div class="swiper-slide"><img src="https://picsum.photos/600/400?2" alt="Image 2"></div>
-        <div class="swiper-slide"><img src="https://picsum.photos/600/400?3" alt="Image 3"></div>
-      </div>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
+<div class="frame">
+  <!-- Swiper container -->
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="https://picsum.photos/600/400?1"></div>
+      <div class="swiper-slide"><img src="https://picsum.photos/600/400?2"></div>
+      <div class="swiper-slide"><img src="https://picsum.photos/600/400?3"></div>
     </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="script.js"></script>
+  <!-- Example text -->
+  <div class="text-box">Edit me</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

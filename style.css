@@ -43,17 +43,18 @@ h1 {
   top: 50px;
   left: 50px;
   padding: 0;
-  background: transparent; /* no background */
-  border: 1px dashed transparent; /* invisible by default */
+  background: transparent;
+  border: 1px dashed transparent;
   cursor: move;
   min-width: 50px;
-  z-index: 10; 
+  z-index: 10;
   transition: border 0.2s, box-shadow 0.2s;
+  user-select: text; /* allow text selection */
 }
 
 .text-box:focus {
   outline: none;
-  border: 1px dashed #333; /* show border only when selected */
+  border: 1px dashed #333;
   box-shadow: 0 0 5px #333;
 }
 
@@ -86,4 +87,31 @@ select, input[type=color] {
   border-radius: 5px;
   border: 1px solid #333;
   cursor: pointer;
+}
+select:focus, input[type=color]:focus {
+  outline: none;
+  border-color: #555;
+}
+/* Resizable handles */
+.text-box {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  padding: 0;
+  background: transparent;
+  border: 1px dashed transparent;
+  cursor: move;
+  min-width: 50px;
+  min-height: 20px;
+  z-index: 10;
+  transition: border 0.2s, box-shadow 0.2s;
+  user-select: text;
+  resize: both;         /* allow resizing */
+  overflow: auto;       /* show scroll if text too big */
+}
+
+.text-box:focus {
+  outline: none;
+  border: 1px dashed #333;
+  box-shadow: 0 0 5px #333;
 }
