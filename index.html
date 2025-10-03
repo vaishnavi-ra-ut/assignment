@@ -1,48 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Mini Canva Editor</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-<link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <title>Mini Canva Editor</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <h1>Mini Canva Editor</h1>
 
-<h1>Mini Canva Editor</h1>
+  <!-- Controls -->
+  <div class="controls">
+    <button id="addTextBtn">Add Text</button>
 
-<!-- Controls -->
-<div class="controls">
-  <button onclick="addText()">Add Text</button>
-  <button onclick="increaseFont()">A+</button>
-  <button onclick="decreaseFont()">A-</button>
-  <select id="fontSelector" onchange="changeFont(this.value)">
-    <option value="Arial">Arial</option>
-    <option value="Times New Roman">Times New Roman</option>
-    <option value="Courier New">Courier New</option>
-    <option value="Georgia">Georgia</option>
-    <option value="Cursive">Cursive</option>
-    <option value="Monospace">Monospace</option>
-  </select>
-  <input type="color" id="colorPicker" onchange="changeColor(this.value)">
-</div>
+    <label class="control-label">Font</label>
+    <select id="fontSelector">
+      <option value="Arial">Arial</option>
+      <option value="Times New Roman">Times New Roman</option>
+      <option value="Courier New">Courier New</option>
+      <option value="Georgia">Georgia</option>
+      <option value="Cursive">Cursive</option>
+      <option value="Monospace">Monospace</option>
+    </select>
 
-<div class="frame">
-  <!-- Swiper container -->
-  <div class="swiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide"><img src="https://picsum.photos/600/400?1"></div>
-      <div class="swiper-slide"><img src="https://picsum.photos/600/400?2"></div>
-      <div class="swiper-slide"><img src="https://picsum.photos/600/400?3"></div>
-    </div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
+    <label class="control-label">Color</label>
+    <input type="color" id="colorPicker" value="#000000">
+
+    <button id="increaseFont">A+</button>
+    <button id="decreaseFont">A-</button>
+
+    <button id="deleteBtn">Delete</button>
   </div>
 
-  <!-- Example text -->
-  <div class="text-box">Edit me</div>
-</div>
+  <div class="frame">
+    <!-- Swiper container (kept for image arrows if you want) -->
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="https://picsum.photos/600/400?1" alt=""></div>
+        <div class="swiper-slide"><img src="https://picsum.photos/600/400?2" alt=""></div>
+        <div class="swiper-slide"><img src="https://picsum.photos/600/400?3" alt=""></div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script src="script.js"></script>
+    <!-- example existing text (non-editing by default, double-click to edit) -->
+    <div class="text-box" data-editing="false" tabindex="0" style="left:20px; top:20px; font-size:20px; font-family:Arial; color:#000;">
+      Edit me
+      <div class="resize-handle" aria-hidden="true"></div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
